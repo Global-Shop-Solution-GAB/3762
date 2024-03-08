@@ -1,0 +1,642 @@
+Program.Sub.ScreenSU.Start
+gui.F_Inv..create
+gui.F_Inv..caption("Inventory")
+gui.F_Inv..size(7140,3345)
+gui.F_Inv..position(0,0)
+gui.F_Inv..event(resize,f_inv_resize)
+gui.F_Inv..event(unload,f_inv_unload)
+gui.F_Inv..alwaysontop(False)
+gui.F_Inv..fontname("Arial")
+gui.F_Inv..fontsize(8)
+gui.F_Inv..forecolor(0)
+gui.F_Inv..fontstyle(,,,,)
+gui.F_Inv..BackColor(-2147483633)
+gui.F_Inv..controlbox(True)
+gui.F_Inv..maxbutton(True)
+gui.F_Inv..minbutton(True)
+gui.F_Inv..mousepointer(0)
+gui.F_Inv..moveable(True)
+gui.F_Inv..sizeable(True)
+gui.F_Inv..ShowInTaskBar(True)
+gui.F_Inv..titlebar(True)
+gui.F_Inv.txtPart.create(textbox,"",True,2310,300,0,200,410,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtPart.maxLength(17)
+gui.F_Inv.txtPart.event(lostfocus,txtpart_lostfocus)
+gui.F_Inv.txtUM.create(textbox,"",True,550,300,0,1085,1000,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtUM.maxLength(3)
+gui.F_Inv.txtPL.create(textbox,"",True,400,300,0,200,1000,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtDesc.create(textbox,"",True,3000,300,0,3640,410,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtDesc.maxLength(30)
+gui.F_Inv.dlstSource.create(dropdownlist)
+gui.F_Inv.dlstSource.visible(True)
+gui.F_Inv.dlstSource.size(1455,330)
+gui.F_Inv.dlstSource.zorder(0)
+gui.F_Inv.dlstSource.position(2130,1000)
+gui.F_Inv.dlstSource.enabled(True)
+gui.F_Inv.dlstSource.fontname("Arial")
+gui.F_Inv.dlstSource.fontsize(8)
+gui.F_Inv.txtPurchUM.create(textbox,"",True,550,300,0,3680,1000,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtPurchUM.maxLength(3)
+gui.F_Inv.txtVendor.create(textbox,"",True,2310,300,0,200,1600,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtVendor.maxLength(20)
+gui.F_Inv.txtInfo.create(textbox,"",True,3000,300,0,3100,1600,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtInfo.maxLength(20)
+gui.F_Inv.txtWeight.create(textbox,"",True,1215,300,0,4735,1000,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtWeight.numericonly(1)
+gui.F_Inv.txtWeight.maxLength(10)
+gui.F_Inv.cmdPart.create(button)
+gui.F_Inv.cmdPart.caption("^")
+gui.F_Inv.cmdPart.visible(True)
+gui.F_Inv.cmdPart.size(375,375)
+gui.F_Inv.cmdPart.zorder(0)
+gui.F_Inv.cmdPart.position(3150,375)
+gui.F_Inv.cmdPart.enabled(True)
+gui.F_Inv.cmdPart.fontname("Arial")
+gui.F_Inv.cmdPart.fontsize(8)
+gui.F_Inv.cmdPart.event(click,cmdpart_click)
+gui.F_Inv.cmdPart.disableonclick(10)
+gui.F_Inv.cmdPL.create(button)
+gui.F_Inv.cmdPL.caption("^")
+gui.F_Inv.cmdPL.visible(True)
+gui.F_Inv.cmdPL.size(375,375)
+gui.F_Inv.cmdPL.zorder(0)
+gui.F_Inv.cmdPL.position(645,960)
+gui.F_Inv.cmdPL.enabled(True)
+gui.F_Inv.cmdPL.fontname("Arial")
+gui.F_Inv.cmdPL.fontsize(8)
+gui.F_Inv.cmdPL.event(click,cmdpl_click)
+gui.F_Inv.cmdPL.disableonclick(10)
+gui.F_Inv.cmdUM.create(button)
+gui.F_Inv.cmdUM.caption("^")
+gui.F_Inv.cmdUM.visible(True)
+gui.F_Inv.cmdUM.size(375,375)
+gui.F_Inv.cmdUM.zorder(0)
+gui.F_Inv.cmdUM.position(1665,980)
+gui.F_Inv.cmdUM.enabled(True)
+gui.F_Inv.cmdUM.fontname("Arial")
+gui.F_Inv.cmdUM.fontsize(8)
+gui.F_Inv.cmdUM.event(click,cmdum_click)
+gui.F_Inv.cmdUM.disableonclick(10)
+gui.F_Inv.cmdPurchUM.create(button)
+gui.F_Inv.cmdPurchUM.caption("^")
+gui.F_Inv.cmdPurchUM.visible(True)
+gui.F_Inv.cmdPurchUM.size(375,375)
+gui.F_Inv.cmdPurchUM.zorder(0)
+gui.F_Inv.cmdPurchUM.position(4275,975)
+gui.F_Inv.cmdPurchUM.enabled(True)
+gui.F_Inv.cmdPurchUM.fontname("Arial")
+gui.F_Inv.cmdPurchUM.fontsize(8)
+gui.F_Inv.cmdPurchUM.event(click,cmdpurchum_click)
+gui.F_Inv.cmdPurchUM.disableonclick(10)
+gui.F_Inv.cmdSave.create(button)
+gui.F_Inv.cmdSave.caption("Save")
+gui.F_Inv.cmdSave.visible(True)
+gui.F_Inv.cmdSave.size(855,375)
+gui.F_Inv.cmdSave.zorder(0)
+gui.F_Inv.cmdSave.position(200,2165)
+gui.F_Inv.cmdSave.enabled(True)
+gui.F_Inv.cmdSave.fontname("Arial")
+gui.F_Inv.cmdSave.fontsize(8)
+gui.F_Inv.cmdSave.event(click,cmdsave_click)
+gui.F_Inv.cmdVendor.create(button)
+gui.F_Inv.cmdVendor.caption("^")
+gui.F_Inv.cmdVendor.visible(True)
+gui.F_Inv.cmdVendor.size(375,375)
+gui.F_Inv.cmdVendor.zorder(0)
+gui.F_Inv.cmdVendor.position(2530,1575)
+gui.F_Inv.cmdVendor.enabled(True)
+gui.F_Inv.cmdVendor.fontname("Arial")
+gui.F_Inv.cmdVendor.fontsize(8)
+gui.F_Inv.cmdVendor.event(click,cmdvendor_click)
+gui.F_Inv.cmdVendor.disableonclick(10)
+gui.F_Inv.lbl1.create(label,"Part Number",True,1020,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl2.create(label,"Description",True,930,255,1,3640,200,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl3.create(label,"Prod Line",True,810,255,1,200,800,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl4.create(label,"UM",True,375,255,1,1085,800,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl5.create(label,"Source",True,690,255,1,2130,800,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl6.create(label,"Purch UM",True,870,255,1,3680,800,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl7.create(label,"Alloy",True,1110,255,1,200,1400,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl8.create(label,"Item Type",True,855,255,1,3100,1400,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.lbl9.create(label,"Weight",True,780,255,1,4735,800,True,0,Arial,8,-2147483633,0)
+gui.F_Inv.cmdClear.create(button)
+gui.F_Inv.cmdClear.caption("Clear")
+gui.F_Inv.cmdClear.visible(True)
+gui.F_Inv.cmdClear.size(855,375)
+gui.F_Inv.cmdClear.zorder(0)
+gui.F_Inv.cmdClear.position(1155,2165)
+gui.F_Inv.cmdClear.enabled(True)
+gui.F_Inv.cmdClear.fontname("Arial")
+gui.F_Inv.cmdClear.fontsize(8)
+gui.F_Inv.cmdClear.event(click,cmdclear_click)
+gui.F_Inv.txtRev.create(textbox,"",True,550,300,0,2555,410,True,0,Arial,8,-2147483643,1)
+gui.F_Inv.txtRev.maxLength(3)
+gui.F_Inv.txtRev.event(lostfocus,txtrev_lostfocus)
+gui.F_Inv.cmdInfo1.create(button)
+gui.F_Inv.cmdInfo1.caption("^")
+gui.F_Inv.cmdInfo1.visible(True)
+gui.F_Inv.cmdInfo1.size(375,375)
+gui.F_Inv.cmdInfo1.zorder(0)
+gui.F_Inv.cmdInfo1.position(6130,1585)
+gui.F_Inv.cmdInfo1.enabled(True)
+gui.F_Inv.cmdInfo1.fontname("Arial")
+gui.F_Inv.cmdInfo1.fontsize(8)
+gui.F_Inv.cmdInfo1.event(click,cmdinfo1_click)
+gui.F_Inv.cmdInfo1.disableonclick(10)
+gui.F_Inv.cmdPart.tabstop(True)
+gui.F_Inv.cmdPart.tabindex(1)
+gui.F_Inv.txtDesc.tabstop(True)
+gui.F_Inv.txtDesc.tabindex(2)
+gui.F_Inv.txtPL.tabstop(True)
+gui.F_Inv.txtPL.tabindex(3)
+gui.F_Inv.cmdPL.tabstop(True)
+gui.F_Inv.cmdPL.tabindex(4)
+gui.F_Inv.txtUM.tabstop(True)
+gui.F_Inv.txtUM.tabindex(5)
+gui.F_Inv.cmdUM.tabstop(True)
+gui.F_Inv.cmdUM.tabindex(6)
+gui.F_Inv.dlstSource.tabstop(True)
+gui.F_Inv.dlstSource.tabindex(7)
+gui.F_Inv.txtPurchUM.tabstop(True)
+gui.F_Inv.txtPurchUM.tabindex(8)
+gui.F_Inv.cmdPurchUM.tabstop(True)
+gui.F_Inv.cmdPurchUM.tabindex(9)
+gui.F_Inv.txtWeight.tabstop(True)
+gui.F_Inv.txtWeight.tabindex(10)
+gui.F_Inv.txtVendor.tabstop(True)
+gui.F_Inv.txtVendor.tabindex(11)
+gui.F_Inv.cmdVendor.tabstop(True)
+gui.F_Inv.cmdVendor.tabindex(12)
+gui.F_Inv.txtInfo.tabstop(True)
+gui.F_Inv.txtInfo.tabindex(13)
+gui.F_Inv.cmdInfo1.tabstop(True)
+gui.F_Inv.cmdInfo1.tabindex(14)
+gui.F_Inv.cmdSave.tabstop(True)
+gui.F_Inv.cmdSave.tabindex(15)
+gui.F_Inv.cmdClear.tabstop(True)
+gui.F_Inv.cmdClear.tabindex(16)
+gui.F_Inv.txtPart.tabstop(True)
+gui.F_Inv.txtPart.tabindex(17)
+gui.F_Inv.txtRev.tabstop(True)
+gui.F_Inv.txtRev.tabindex(18)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sMode.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coded by: JLH
+'Project Start Date: 9/15/2011
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.CallSub(Gethook)
+F.Intrinsic.Control.CallSub(Lockscreen)
+
+Gui.F_Inv.dlstSource.AddItem("",0)
+Gui.F_Inv.dlstSource.AddItem("Manuf Part",1)
+Gui.F_Inv.dlstSource.AddItem("Purchased Part",2)
+
+Gui.F_Inv.cmdPart.SetFocus
+
+Gui.F_Inv..Show
+
+Program.Sub.Main.End
+
+program.sub.cmdpart_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpart_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+'Part Browser
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sQuery.Declare(String)
+
+'Opens part browser and populates Product line, description, concatenates the part and rev to populate part
+F.Intrinsic.UI.Browser(100,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Inv.txtPart.Text(V.Local.sRet(0))
+	Gui.F_Inv.txtRev.Text(V.Local.sRet(1))
+	Gui.F_Inv.txtDesc.Text(V.Local.sRet(3))
+	Gui.F_Inv.txtPL.Text(V.Local.sRet(4))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.GSSPartString(V.Local.sRet(0),V.Local.sRet(1),V.Local.sRet)
+F.Intrinsic.Control.CallSub(Populate,"Part",V.Local.sRet)
+
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdpart_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpart_click.end
+
+program.sub.cmdpl_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpl_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.Browser(130,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Inv.txtPL.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdpl_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpl_click.end
+
+program.sub.cmdum_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdum_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.String.Split("Code*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*5000","*!*",V.Local.sWidths)
+F.Intrinsic.UI.Browser("UM Codes","conx","Select CODE, DESCR from UM_CODES",V.Local.sTitles,V.Local.sWidths,1000,3000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Inv.txtUM.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdum_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdum_click.end
+
+program.sub.cmdpurchum_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpurchum_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.String.Split("Code*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*5000","*!*",V.Local.sWidths)
+F.Intrinsic.UI.Browser("UM Codes","conx","Select CODE, DESCR from UM_CODES",V.Local.sTitles,V.Local.sWidths,1000,3000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Inv.txtPurchUM.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpurchum_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpurchum_click.end
+
+program.sub.cmdvendor_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdvendor_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sQuery.Declare(String)
+
+F.Intrinsic.String.Split("Vendor Code*!*Alloy Rate","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("1000*!*1000","*!*",V.local.sColW)
+V.Local.sQuery.Set("Select VEND_CODE, ALLOY_RATE from INVENTORY_VENDR order by VEND_CODE")
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Vendor","conx",V.Local.sQuery,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Inv.txtVendor.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdvendor_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdvendor_click.end
+
+program.sub.cmdsave_click.start
+V.Local.sTemp.Declare(String)
+V.Local.iCount.Declare(Long)
+V.Local.sQuery.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sSource.Declare(String)
+V.Local.iRet.Declare(Long)
+
+
+F.Intrinsic.Debug.Stop
+
+F.ODBC.Connection!conx.OpenRecordsetRO("rst","Select * from V_Locations")
+F.Intrinsic.String.GSSPartString(V.Screen.F_Inv!txtPart.Text,V.Screen.F_Inv!txtRev.Text,V.local.sPart)
+F.Intrinsic.Control.If(V.Screen.F_Inv!dlstSource.ListIndex,=,1)
+	V.Local.sSource.Set("M")
+F.Intrinsic.Control.ElseIf(V.Screen.F_Inv!dlstSource.ListIndex,=,2)
+	V.Local.sSource.Set("P")
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Occurs(V.Screen.F_Inv!txtWeight.Text,".",V.Local.iCount)
+F.Intrinsic.String.InstrRev(V.Screen.F_Inv!txtWeight.Text,".",V.Local.iRet)
+F.Intrinsic.Control.If(V.local.iCount,>,1)
+	F.Intrinsic.UI.Msgbox("Invalid weight")
+	F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.ElseIf(V.Local.iRet,>,4)
+F.Intrinsic.UI.Msgbox("Invalid weight")
+	F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.if(V.Global.sMode,=,"N")
+	F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+		'F.Global.Inventory.CreatePart(V.Local.sPart,V.Screen.F_Inv!txtUM.text,V.Screen.F_Inv!txtDesc.text,V.ODBC.conx!rst.FieldVal!LOCATION,V.Screen.F_Inv!txtPL.text,V.local.sSource,,,)
+		F.Global.Inventory.AddPartToBatch(V.Local.sPart,V.Screen.F_Inv!txtUM.text,V.Screen.F_Inv!txtDesc.Text,V.ODBC.conx!rst.FieldVal!LOCATION,V.Screen.F_Inv!txtPL.Text,V.Local.sSource,,,,"NOMAINT ")
+		f.Global.Inventory.PostPartBatch
+		F.Intrinsic.String.Concat("Select * From Inventory_Mst2 where PART='",V.Local.sPart,"' and Location='",V.ODBC.conx!rst.FieldVal!LOCATION,"'",V.Local.sQuery)
+		F.ODBC.Connection!conx.OpenRecordsetRW("rstN",V.Local.sQuery)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstN.EOF,=,False)
+			F.ODBC.conx!rstN.Set!Text_Info1(V.Screen.F_Inv!txtInfo.Text)
+			F.ODBC.conx!rstN.Update
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstN.Close
+		F.ODBC.conx!rst.MoveNext
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.Elseif(V.Global.sMode,=,"O")
+	F.Intrinsic.Control.If(V.Screen.F_Inv!txtPart.Text,<>,"")
+		F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+			F.Intrinsic.String.Concat("Select * From Inventory_Mstr where PART='",V.Local.sPart,"' AND LOCATION='",V.ODBC.conx!rst.FieldVal!LOCATION,"'",V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenRecordsetRW("rstO",V.Local.sQuery)
+			F.Intrinsic.Control.if(V.ODBC.conx!rstO.EOF,=,False)
+				F.ODBC.conx!rstO.Set!PRODUCT_LINE(V.Screen.F_Inv!txtPL.Text)
+				F.ODBC.conx!rstO.Set!DESCRIPTION(V.Screen.F_Inv!txtDesc.Text)
+				F.ODBC.conx!rstO.Set!UM_PURCHASING(V.Screen.F_Inv!txtPurchUM.Text)
+				F.ODBC.conx!rstO.Set!UM_INVENTORY(V.Screen.F_Inv!txtUM.Text)
+				F.ODBC.conx!rstO.Update
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rstO.Close
+			F.Intrinsic.String.Concat("Select * From Inventory_Mst3 where PART='",V.Local.sPart,"' AND LOCATION='",V.ODBC.conx!rst.FieldVal!LOCATION,"'",V.Local.sQuery)
+			F.ODBC.Connection!conx.OpenRecordsetRW("rstO",V.Local.sQuery)
+			F.Intrinsic.Control.if(V.ODBC.conx!rstO.EOF,=,False)
+				F.ODBC.conx!rstO.Set!LBS(V.Screen.F_Inv!txtWeight.Text)
+				F.ODBC.conx!rstO.Set!CODE_SOURCE(V.local.sSource)
+				F.ODBC.conx!rstO.Set!NAME_VENDOR(V.Screen.F_Inv!txtVendor.Text)
+				F.ODBC.conx!rstO.Set!TEXT_INFO1(V.Screen.F_Inv!txtInfo.Text)
+				F.ODBC.conx!rstO.Update
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rstO.Close
+			F.ODBC.conx!rst.MoveNext
+		F.Intrinsic.Control.Loop
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Screen.F_Inv!txtPart.Text,<>,"")
+		F.Intrinsic.Control.DoUntil(V.ODBC.conx!rst.EOF,=,True)
+			F.Intrinsic.String.Concat(V.Caller.CompanyCode,"!*!D!*!N!*!!*!",V.Local.sPart,"!*!",V.ODBC.conx!rst.FieldVal!LOCATION,V.Local.sTemp)
+			F.Global.General.CallWrapperSync(3500,V.Local.sTemp)
+			F.ODBC.conx!rst.MoveNext
+		F.Intrinsic.Control.Loop
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.CallSub(Cmdclear_click)
+
+program.sub.cmdsave_click.end
+
+program.sub.f_inv_unload.start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+program.sub.f_inv_unload.end
+
+program.sub.cmdclear_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdclear_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Clears form
+Gui.F_Inv.txtPart.Text("")
+Gui.F_Inv.txtPL.Text("")
+Gui.F_Inv.txtDesc.Text("")
+Gui.F_Inv.txtUM.Text("")
+Gui.F_Inv.txtPurchUM.Text("")
+Gui.F_Inv.txtInfo.Text("")
+Gui.F_Inv.txtVendor.Text("")
+Gui.F_Inv.txtWeight.Text("")
+Gui.F_Inv.dlstSource.ListIndex(0)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdclear_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdclear_click.end
+
+Program.Sub.GetHook.Start
+F.Intrinsic.Control.SetErrorHandler("GetHook_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sQuery.Declare(String)
+V.Local.sMode.Declare(String)
+
+F.Intrinsic.String.Concat("Select * From HOOK_USER where ID Like '%",V.Caller.Hook,"%'",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,<>,True)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!SCRIPT_DESC,=,"ATG_INV_ALT New")
+		V.Global.sMode.Set("N")
+	F.Intrinsic.Control.ElseIf(V.ODBC.conx!rst.FieldValTrim!SCRIPT_DESC,=,"ATG_INV_ALT Edit")
+		V.Global.sMode.Set("O")
+	F.Intrinsic.Control.ElseIf(V.ODBC.conx!rst.FieldValTrim!SCRIPT_DESC,=,"ATG_INV_ALT Delete")
+		V.Global.sMode.Set("D")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("GetHook_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_3762_Inv_Alt.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GetHook.End
+
+Program.Sub.LockScreen.Start
+F.Intrinsic.Control.SelectCase(V.Global.sMode)
+	F.Intrinsic.Control.Case("N")
+		Gui.F_Inv.cmdPart.Visible(False)
+		Gui.F_Inv..Caption("Inventory - New")
+	F.Intrinsic.Control.Case("O")
+		Gui.F_Inv.txtPart.Enabled(False)
+		Gui.F_Inv.txtRev.Enabled(False)
+		Gui.F_Inv..Caption("Inventory - Open")
+	F.Intrinsic.Control.Case("D")
+		Gui.F_Inv.cmdSave.Caption("Delete")
+		Gui.F_Inv.cmdClear.Visible(False)
+		Gui.F_Inv.txtDesc.Enabled(False)
+		Gui.F_Inv.txtInfo.Enabled(False)
+		Gui.F_Inv.txtPart.Enabled(False)
+		Gui.F_Inv.txtRev.Enabled(False)
+		Gui.F_Inv.txtVendor.Enabled(False)
+		Gui.F_Inv.txtWeight.Enabled(False)
+		Gui.F_Inv.cmdPL.Enabled(False)
+		Gui.F_Inv.cmdPurchUM.Enabled(False)
+		Gui.F_Inv.cmdUM.Enabled(False)
+		Gui.F_Inv.cmdVendor.Enabled(False)
+		Gui.F_Inv.dlstSource.Enabled(False)
+		Gui.F_Inv..Caption("Inventory - Delete")
+F.Intrinsic.Control.EndSelect
+
+
+Program.Sub.LockScreen.End
+
+Program.Sub.Populate.Start
+V.Local.sQuery.Declare(String)
+
+'Gets UM and UM purchasing for part and populates those fields
+F.Intrinsic.String.Concat("Select UM_PURCHASING, UM_INVENTORY from INVENTORY_MSTR where PART='",V.args.Part,"'",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,<>,True)
+	Gui.F_Inv.txtPurchUM.Text(V.ODBC.conx!rst.FieldVal!UM_PURCHASING)
+	Gui.F_Inv.txtUM.Text(V.ODBC.conx!rst.FieldVal!UM_INVENTORY)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+'Gets Source, Weight, Vendor, and TextInfo1 for part and populates those fields
+F.Intrinsic.String.Concat("Select CODE_SOURCE, LBS, NAME_VENDOR, TEXT_INFO1 from INVENTORY_MST2 where PART='",V.args.Part,"'",V.Local.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,<>,True)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!CODE_SOURCE,=,"P")
+		Gui.F_Inv.dlstSource.ListIndex(2)
+	F.Intrinsic.Control.ElseIf(V.ODBC.conx!rst.FieldValTrim!CODE_SOURCE,=,"M")
+		Gui.F_Inv.dlstSource.ListIndex(1)
+	F.Intrinsic.Control.Else
+		Gui.F_Inv.dlstSource.ListIndex(0)
+	F.Intrinsic.Control.EndIf
+	Gui.F_Inv.txtWeight.Text(V.ODBC.conx!rst.FieldVal!LBS)
+	Gui.F_Inv.txtVendor.Text(V.ODBC.conx!rst.FieldVal!NAME_VENDOR)
+	Gui.F_Inv.txtInfo.Text(V.ODBC.conx!rst.FieldVal!TEXT_INFO1)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+Program.Sub.Populate.End
+
+program.sub.txtpart_lostfocus.start
+V.Local.sQuery.Declare(String)
+V.Local.sPart.Declare(String)
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.If(V.Screen.F_Inv!txtPart.text,<>,"")
+	F.Intrinsic.String.Concat("Select Top 1 * from INVENTORY_MSTR where PART like'%",V.Screen.F_Inv!txtPart.text,"%' ORDER BY PART",V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,<>,True)
+		F.Intrinsic.String.LimitSplit(V.ODBC.conx!rst.FieldVal!PART,17,V.Local.sPart)
+		Gui.F_Inv.txtPart.Text(V.local.sPart(0))
+		Gui.F_Inv.txtRev.Text(V.Local.sPart(1))
+		V.Local.sPart.Set(V.ODBC.conx!rst.FieldVal!PART)
+		Gui.F_Inv.txtDesc.Text(V.ODBC.conx!rst.FieldVal!DESCRIPTION)
+		Gui.F_Inv.txtPL.Text(V.ODBC.conx!rst.FieldVal!PRODUCT_LINE)
+		Gui.F_Inv.txtPurchUM.Text(V.ODBC.conx!rst.FieldVal!UM_PURCHASING)
+		Gui.F_Inv.txtUM.Text(V.ODBC.conx!rst.FieldVal!UM_INVENTORY)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Populate,"Part",V.local.sPart)
+
+program.sub.txtpart_lostfocus.end
+
+program.sub.txtrev_lostfocus.start
+V.Local.sQuery.Declare(String)
+V.Local.sPart.Declare(String)
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.If(V.Screen.F_Inv!txtPart.text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_Inv!txtRev.Text,<>,"")
+	F.Intrinsic.String.GSSPartString(V.Screen.F_Inv!txtPart.Text,V.Screen.F_Inv!txtRev.Text,V.Local.sPart)
+	F.Intrinsic.String.Concat("Select * from INVENTORY_MSTR where PART='",V.local.sPart,"'",V.Local.sQuery)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,<>,True)
+'		F.Intrinsic.String.LimitSplit(V.ODBC.conx!rst.FieldVal!PART,17,V.Local.sPart)
+'		Gui.F_Inv.txtPart.Text(V.local.sPart(0))
+'		Gui.F_Inv.txtRev.Text(V.Local.sPart(1))
+'		V.Local.sPart.Set(V.ODBC.conx!rst.FieldVal!PART)
+		Gui.F_Inv.txtDesc.Text(V.ODBC.conx!rst.FieldVal!DESCRIPTION)
+		Gui.F_Inv.txtPL.Text(V.ODBC.conx!rst.FieldVal!PRODUCT_LINE)
+		Gui.F_Inv.txtPurchUM.Text(V.ODBC.conx!rst.FieldVal!UM_PURCHASING)
+		Gui.F_Inv.txtUM.Text(V.ODBC.conx!rst.FieldVal!UM_INVENTORY)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Populate,"Part",V.local.sPart)
+
+program.sub.txtrev_lostfocus.end
+
+program.sub.cmdinfo1_click.start
+V.Local.sRet.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sQuery.Declare(String)
+
+'F.Intrinsic.Debug.InvokeDebugger
+F.Intrinsic.Debug.Stop
+
+V.Local.sQuery.Set("Select Key_Code from INV_INFO1")
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Item Type","conx",V.Local.sQuery,"Item Type",1000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Inv.txtInfo.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+
+program.sub.cmdinfo1_click.end
+
+
